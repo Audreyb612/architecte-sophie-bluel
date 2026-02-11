@@ -93,10 +93,7 @@ nav ul {
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
-}
-
-li:hover {
-	color: #B1663C;
+	font-weight: 500;
 }
 #introduction {
 	display: flex;
@@ -180,9 +177,111 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
+input[type="submit"] {
+	border: none;
+	cursor: pointer;
+  }
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
 }
 
+.filters {
+	display: flex;
+	justify-content: center;
+	gap: 12px;
+	margin: 30px 0 45px;   /* ajuste si besoin */
+	flex-wrap: wrap;
+}
+
+.filters button {
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 16px;
+
+	padding: 10px 22px;
+	border-radius: 60px;
+
+	border: 1px solid #1D6154;
+	background: transparent;
+	color: #1D6154;
+
+	cursor: pointer;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filters button:hover {
+	background-color: #1D6154;
+	color: #fff;
+}
+
+.filters button.active {
+	background-color: #1D6154;
+	color: #fff;
+}
+
+/* Liens nav (pour garder le style) */
+nav a {
+	text-decoration: none;
+	color: inherit;
+  }
+  
+  /* login en gras sur la page login uniquement */
+  nav a.nav-active {
+	font-weight: 600;
+  }
+  
+  /* Page login */
+  #login {
+	width: 50%;
+	margin: 150px auto 355px;
+	text-align: center;
+  }
+  
+  #login h2 {
+	margin-bottom: 35px;
+  }
+  
+  #login form {
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+  }
+  
+  #login label {
+	margin: 2em 0 1em 0;
+  }
+  
+  #login input[type="email"],
+  #login input[type="password"] {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  }
+  
+  /* bouton login : on réutilise ton style global, on ajuste juste si besoin */
+  #login input[type="submit"] {
+	cursor: pointer;
+  }
+  
+  /* Mot de passe oublié */
+  #login .forgot {
+	display: inline-block;
+	margin-top: 28px;
+	text-decoration: underline;
+	color: inherit;
+  }
+
+nav a {
+	text-decoration: none;
+	font-family: work sans !important;
+	color: #000;	
+  }
+  
+nav a :hover { 
+	color:#000;
+	font-weight: 600;
+};
