@@ -76,4 +76,3 @@ fetch("http://localhost:5678/api/categories")
     });
   })
   .catch(err => console.error("Erreur fetch catégories :", err));
-

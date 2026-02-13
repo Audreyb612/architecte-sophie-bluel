@@ -28,9 +28,24 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
+html, body{
+	background-color: #FFFEF8;
+  }
+  
+body{
+	margin: 0;
+	font-family: 'Work Sans';
+	font-size: 14px;
 	line-height: 1;
-}
+	width: 100%;
+	max-width: none;
+  }
+
+.page{
+	max-width: 1140px;
+	margin: 0 auto;
+  }
+
 ol, ul {
 	list-style: none;
 }
@@ -47,12 +62,7 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
-body {
-	max-width: 1140px;
-	margin:auto;
-	font-family: 'Work Sans' ;
-	font-size: 14px;
-}
+
 header {
 	display: flex;
 	justify-content: space-between;
@@ -94,6 +104,9 @@ nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
 	font-weight: 500;
+}
+li:hover {
+	color: #B1663C;
 }
 #introduction {
 	display: flex;
@@ -175,6 +188,7 @@ input[type="submit"]{
 	width: 180px;
 	text-align: center;
 	border-radius: 60px ;
+	height: 36px;
 }
 
 input[type="submit"] {
@@ -182,11 +196,12 @@ input[type="submit"] {
 	cursor: pointer;
   }
 
-footer nav ul {
+  footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
 }
+/* ce que j'ai fait : */
 
 .filters {
 	display: flex;
@@ -281,7 +296,109 @@ nav a {
 	color: #000;	
   }
   
-nav a :hover { 
-	color:#000;
+nav a.nav-active {
 	font-weight: 600;
-};
+	color: #000;
+  }
+nav ul {
+	display: flex;
+	align-items: center;
+  }
+  
+nav .instagram a {
+	display: flex;
+	align-items: center;
+  }
+  
+nav .instagram img {
+	width: 22px;     /* ajuste si la maquette est plus grande (souvent 20-22px) */
+	height: 22px;
+	display: block;
+  }
+/* footer full width */
+
+footer{
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #dcdcdc;
+  padding: 2em 0;
+}
+footer nav ul{
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  }
+  .edit-bar__content,
+  .edit-link{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+  }
+  
+  .edit-bar__content i,
+  .edit-link i{
+	font-size: 16px;
+	line-height: 1;
+  }
+
+  /* ---- MODE EDITION (visible seulement si log) ---- */
+.edit-bar {
+	display: none;            /* caché par défaut */
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%;
+	height: 60px;
+	background: #000;
+	color: #fff;
+	z-index: 9999;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .edit-bar__content{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-family: 'Work Sans';
+	font-size: 16px;
+  }
+  
+  .edit-bar__icon{
+	width: 16px;
+	height: 16px;
+  }
+  /* Quand loggé */
+  body.is-auth .edit-bar { display: flex; }
+  
+  /* Pour éviter que la barre cache le header */
+  body.is-auth { padding-top: 60px; }
+  
+  /* ---- Titre "Mes projets" + modifier ---- */
+  .portfolio-title{
+	display: flex;
+	align-items: center;
+	justify-content: center; /* garde le h2 centré */
+	gap: 25px;
+  }
+  
+  .edit-link{
+	display: none;          /* caché par défaut */
+	align-items: center;
+	gap: 8px;
+	color: #000;
+	text-decoration: none;
+	font-size: 14px;
+  }
+  
+  .edit-link__icon{
+	width: 16px;
+	height: 16px;
+  }
+  
+  body.is-auth .edit-link{
+	display: inline-flex;
+  }
+  

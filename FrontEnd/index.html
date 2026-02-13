@@ -8,17 +8,30 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
+	<div class="edit-bar" id="editBar">
+		<span class="edit-bar__content">
+		  <i class="fa-regular fa-pen-to-square"></i>
+		  <span>Mode édition</span>
+		</span>
+	</div>
+
+    <div class="page">
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
 		  <li><a href="index.html">projets</a></li>
 		  <li><a href="#contact">contact</a></li>
-		  <li><a href="login.html">login</a></li>
-		  <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+		  <li><a href="login.html" class="nav-active" id="authLink">login</a></li>
+		  <li class="instagram">
+			<a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+			  <img src="./assets/icons/instagram.png" alt="Instagram">
+			</a>
+		  </li>
 		</ul>
 	  </nav>	  
 </header>
@@ -36,6 +49,12 @@
 	</section>
 	<section id="portfolio">
 		<h2>Mes Projets</h2>
+		<div class="portfolio-title">
+			<a href="#" class="edit-link" id="editProjectsLink">
+				<i class="fa-regular fa-pen-to-square"></i>
+				modifier
+			</a>
+		  </div>
 		<div class="filters"></div>
 		<div class="gallery">
 			<figure>
@@ -98,9 +117,10 @@
 		</form>
 	</section>
 </main>
+</div>
 
 <footer>
-	<nav>
+	<nav class="page">
 		<ul>
 			<li>Mentions Légales</li>
 		</ul>
