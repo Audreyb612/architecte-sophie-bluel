@@ -1,0 +1,38 @@
+    <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__overlay" data-close="true"></div>
+  
+    <div class="modal__dialog" role="document">
+      <div class="modal__header">
+        <button class="modal__back" type="button" aria-label="Retour" hidden>←</button>
+        <button class="modal__close" type="button" aria-label="Fermer">✕</button>
+      </div>
+  
+      <div class="modal__view" data-view="gallery">
+        <h3 class="modal__title">Galerie photo</h3>
+        <div class="modal__grid" id="modalGallery"></div>
+  
+        <div class="modal__footer">
+          <button id="openAddPhoto" class="modal__primary" type="button">Ajouter une photo</button>
+        </div>
+      </div>
+  
+      <div class="modal__view" data-view="add" hidden>
+        <h3 class="modal__title">Ajout photo</h3>
+      
+        <form id="addPhotoForm" class="modal__form">
+          <label class="modal__label" for="photoFile">Image</label>
+          <input type="file" id="photoFile" name="image" accept="image/*" required />
+      
+          <label class="modal__label" for="photoTitle">Titre</label>
+          <input type="text" id="photoTitle" name="title" required />
+      
+          <label class="modal__label" for="photoCategory">Catégorie</label>
+          <select id="photoCategory" name="category" required>
+            <option value="">—</option>
+          </select>
+      
+          <button class="modal__primary" type="submit">Valider</button>
+        </form>
+      </div>
+      </div>
+    </div>

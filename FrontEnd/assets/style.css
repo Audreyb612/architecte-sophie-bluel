@@ -16,389 +16,474 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
-html, body{
-	background-color: #FFFEF8;
-  }
-  
-body{
-	margin: 0;
-	font-family: 'Work Sans';
-	font-size: 14px;
-	line-height: 1;
-	width: 100%;
-	max-width: none;
-  }
 
-.page{
-	max-width: 1140px;
-	margin: 0 auto;
-  }
+html, body {
+  background-color: #FFFEF8;
+}
 
-ol, ul {
-	list-style: none;
+body {
+  margin: 0;
+  font-family: 'Work Sans';
+  font-size: 14px;
+  line-height: 1;
+  width: 100%;
+  max-width: none;
 }
-blockquote, q {
-	quotes: none;
+
+.page {
+  max-width: 1140px;
+  margin: 0 auto;
 }
+
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 /** end reset css**/
 
+/* ===== Layout global ===== */
 header {
-	display: flex;
-	justify-content: space-between;
-	margin: 50px 0
-}
-section {
-	margin: 50px 0
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
 }
 
-h1{
-	display: flex;
-	flex-direction: column;
-	font-family: 'Syne';
-	font-size: 22px;
-	font-weight: 800;
-	color: #B1663C
+section { margin: 50px 0; }
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Syne';
+  font-size: 22px;
+  font-weight: 800;
+  color: #B1663C;
 }
 
 h1 > span {
-	font-family: 'Work Sans';
-	font-size:10px;
-	letter-spacing: 0.1em;
-;
+  font-family: 'Work Sans';
+  font-size: 10px;
+  letter-spacing: 0.1em;
 }
 
-h2{
-	font-family: 'Syne';
-	font-weight: 700;
-	font-size: 30px;
-	color: #1D6154
+h2 {
+  font-family: 'Syne';
+  font-weight: 700;
+  font-size: 30px;
+  color: #1D6154;
 }
+
+/* ===== Nav ===== */
 nav ul {
-	display: flex;
-	align-items: center;
-	list-style-type: none;
-
+  display: flex;
+  align-items: center;
+  list-style-type: none;
 }
+
 nav li {
-	padding: 0 10px;
-	font-size: 1.2em;
-	font-weight: 500;
+  padding: 0 10px;
+  font-size: 1.2em;
+  font-weight: 500;
 }
-li:hover {
-	color: #B1663C;
+
+nav li:hover { color: #B1663C; }
+
+/* Liens nav : une seule version (sans doublons) */
+nav a {
+  text-decoration: none;
+  font-family: 'Work Sans';
+  color: #000;
+  font-weight: 400;
 }
+
+nav a:hover { font-weight: 600; }
+
+/* login en gras sur la page login uniquement (classe nav-active) */
+nav a.nav-active { font-weight: 600; }
+
+/* Instagram */
+nav .instagram a {
+  display: flex;
+  align-items: center;
+}
+
+nav .instagram img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* ===== Intro ===== */
 #introduction {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
-#introduction figure {
-	flex: 1
-}
+
+#introduction figure { flex: 1; }
+
 #introduction img {
-	display: block;
-	margin: auto;
-	width: 80%;
+  display: block;
+  margin: auto;
+  width: 80%;
 }
 
-#introduction article {
-	flex: 1
-}
-#introduction h2 {
-	margin-bottom: 1em;
-}
+#introduction article { flex: 1; }
 
-#introduction p {
-	margin-bottom: 0.5em;
-}
+#introduction h2 { margin-bottom: 1em; }
+
+#introduction p { margin-bottom: 0.5em; }
+
+/* ===== Portfolio / Galerie ===== */
 #portfolio h2 {
-	text-align: center;
-	margin-bottom: 1em;
+  text-align: center;
+  margin-bottom: 1em;
 }
+
 .gallery {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 
-.gallery img {
-	width: 100%;
+.gallery img { width: 100%; }
 
-}
+/* ===== Contact ===== */
 #contact {
-	width: 50%;
-margin: auto;
+  width: 50%;
+  margin: auto;
 }
-#contact > * {
-	text-align: center;
 
-}
-#contact h2{
-	margin-bottom: 20px;
-}
+#contact > * { text-align: center; }
+
+#contact h2 { margin-bottom: 20px; }
+
 #contact form {
-	text-align: left;
-	margin-top:30px;
-	display: flex;
-	flex-direction: column;
+  text-align: left;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 #contact input {
-	height: 50px;
-	font-size: 1.2em;
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
-#contact label {
-	margin: 2em 0 1em 0;
-}
+
+#contact label { margin: 2em 0 1em 0; }
+
 #contact textarea {
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"]{
-	font-family: 'Syne';
-	font-weight: 700;
-	color: white;
-	background-color: #1D6154;
-	margin : 2em auto ;
-	width: 180px;
-	text-align: center;
-	border-radius: 60px ;
-	height: 36px;
-}
-
+/* Boutons submit */
 input[type="submit"] {
-	border: none;
-	cursor: pointer;
-  }
-
-  footer nav ul {
-	display: flex;
-	justify-content: flex-end;
-	margin: 2em
-}
-/* ce que j'ai fait : */
-
-.filters {
-	display: flex;
-	justify-content: center;
-	gap: 12px;
-	margin: 30px 0 45px;   /* ajuste si besoin */
-	flex-wrap: wrap;
+  font-family: 'Syne';
+  font-weight: 700;
+  color: white;
+  background-color: #1D6154;
+  margin: 2em auto;
+  width: 180px;
+  text-align: center;
+  border-radius: 60px;
+  height: 36px;
+  border: none;
+  cursor: pointer;
 }
 
-.filters button {
-	font-family: 'Syne';
-	font-weight: 700;
-	font-size: 16px;
-
-	padding: 10px 22px;
-	border-radius: 60px;
-
-	border: 1px solid #1D6154;
-	background: transparent;
-	color: #1D6154;
-
-	cursor: pointer;
-	transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.filters button:hover {
-	background-color: #1D6154;
-	color: #fff;
-}
-
-.filters button.active {
-	background-color: #1D6154;
-	color: #fff;
-}
-
-/* Liens nav (pour garder le style) */
-nav a {
-	text-decoration: none;
-	color: inherit;
-  }
-  
-  /* login en gras sur la page login uniquement */
-  nav a.nav-active {
-	font-weight: 600;
-  }
-  
-  /* Page login */
-  #login {
-	width: 50%;
-	margin: 150px auto 355px;
-	text-align: center;
-  }
-  
-  #login h2 {
-	margin-bottom: 35px;
-  }
-  
-  #login form {
-	text-align: left;
-	display: flex;
-	flex-direction: column;
-  }
-  
-  #login label {
-	margin: 2em 0 1em 0;
-  }
-  
-  #login input[type="email"],
-  #login input[type="password"] {
-	height: 50px;
-	font-size: 1.2em;
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-  }
-  
-  /* bouton login : on réutilise ton style global, on ajuste juste si besoin */
-  #login input[type="submit"] {
-	cursor: pointer;
-  }
-  
-  /* Mot de passe oublié */
-  #login .forgot {
-	display: inline-block;
-	margin-top: 28px;
-	text-decoration: underline;
-	color: inherit;
-  }
-
-nav a {
-	text-decoration: none;
-	font-family: work sans !important;
-	color: #000;	
-  }
-  
-nav a.nav-active {
-	font-weight: 600;
-	color: #000;
-  }
-nav ul {
-	display: flex;
-	align-items: center;
-  }
-  
-nav .instagram a {
-	display: flex;
-	align-items: center;
-  }
-  
-nav .instagram img {
-	width: 22px;     /* ajuste si la maquette est plus grande (souvent 20-22px) */
-	height: 22px;
-	display: block;
-  }
-/* footer full width */
-
-footer{
+/* ===== Footer ===== */
+footer {
   width: 100%;
   background: #fff;
   border-top: 1px solid #dcdcdc;
   padding: 2em 0;
 }
-footer nav ul{
-	display: flex;
-	justify-content: flex-end;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-  }
-  .edit-bar__content,
-  .edit-link{
-	display: flex;
-	align-items: center;
-	gap: 10px;
+
+footer nav ul {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ===== Filtres ===== */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 30px 0 45px;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  font-family: 'Syne';
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px 22px;
+  border-radius: 60px;
+  border: 1px solid #1D6154;
+  background: transparent;
+  color: #1D6154;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filters button:hover {
+  background-color: #1D6154;
+  color: #fff;
+}
+
+.filters button.active {
+  background-color: #1D6154;
+  color: #fff;
+}
+
+/* ===== Page Login ===== */
+#login {
+  width: 50%;
+  margin: 150px auto 355px;
+  text-align: center;
+}
+
+#login h2 { margin-bottom: 35px; }
+
+#login form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+#login label { margin: 2em 0 1em 0; }
+
+#login input[type="email"],
+#login input[type="password"] {
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+/* Mot de passe oublié */
+#login .forgot {
+  display: inline-block;
+  margin-top: 28px;
+  text-decoration: underline;
+  color: inherit;
+}
+
+/* ===== MODE EDITION ===== */
+.edit-bar {
+  display: none; /* caché par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #000;
+  color: #fff;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-bar__content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Work Sans';
+  font-size: 16px;
+}
+
+.edit-bar__icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Quand loggé */
+body.is-auth .edit-bar { display: flex; }
+
+/* Pour éviter que la barre cache le header */
+body.is-auth { padding-top: 60px; }
+
+/* Titre "Mes projets" + modifier */
+.portfolio-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 35px;
+}
+
+.edit-link {
+  display: none; /* caché par défaut */
+  align-items: center;
+  gap: 8px;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.edit-link__icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* visible seulement en mode édition */
+body.is-auth .edit-link { display: inline-flex; }
+
+/* En mode édition : on cache les filtres */
+body.is-auth .filters { display: none; }
+
+/* ===== MODALE ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 20000; /* au-dessus de la barre d’édition (9999) */
+}
+
+.modal.is-open { display: block; }
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.modal__dialog {
+  position: relative;
+  z-index: 20001;
+  width: 630px;
+  max-width: calc(100% - 40px);
+  background: #fff;
+  margin: 80px auto;
+  border-radius: 10px;
+  padding: 20px 30px 30px;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__close,
+.modal__back {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.modal__title {
+  text-align: center;
+  margin: 10px 0 20px;
+  font-family: 'Work Sans';
+  font-size: 20px;
+}
+
+.modal__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  padding: 10px 0 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal__footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.modal__primary {
+  font-family: 'Syne';
+  font-weight: 700;
+  color: #fff;
+  background: #1D6154;
+  border: none;
+  border-radius: 60px;
+  height: 36px;
+  padding: 0 24px;
+  cursor: pointer;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal__label { margin-top: 10px; }
+
+/* miniatures dans la modale */
+
+.modal__thumb{
+	position: relative;
+	aspect-ratio: 1 / 1;
+	overflow: hidden;
+	background: #f2f2f2;
   }
   
-  .edit-bar__content i,
-  .edit-link i{
-	font-size: 16px;
-	line-height: 1;
-  }
-
-  /* ---- MODE EDITION (visible seulement si log) ---- */
-.edit-bar {
-	display: none;            /* caché par défaut */
-	position: fixed;
-	top: 0; left: 0;
+.modal__thumb img{
 	width: 100%;
-	height: 60px;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+  }
+.modal__thumb{
+	position: relative;
+	aspect-ratio: 1 / 1;
+	overflow: hidden;
+	background: #f2f2f2;
+  }
+  
+.modal__thumb img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+  }
+  
+.modal__trash i{
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	width: 26px;
+	height: 26px;
+	border: none;
+	border-radius: 3px;
 	background: #000;
 	color: #fff;
-	z-index: 9999;
-	align-items: center;
-	justify-content: center;
+	cursor: pointer;
+	display: grid;
+	place-items: center;
+	font-size: 11px;
   }
-  
-  .edit-bar__content{
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	font-family: 'Work Sans';
-	font-size: 16px;
-  }
-  
-  .edit-bar__icon{
-	width: 16px;
-	height: 16px;
-  }
-  /* Quand loggé */
-  body.is-auth .edit-bar { display: flex; }
-  
-  /* Pour éviter que la barre cache le header */
-  body.is-auth { padding-top: 60px; }
-  
-  /* ---- Titre "Mes projets" + modifier ---- */
-  .portfolio-title{
-	display: flex;
-	align-items: center;
-	justify-content: center; /* garde le h2 centré */
-	gap: 25px;
-  }
-  
-  .edit-link{
-	display: none;          /* caché par défaut */
-	align-items: center;
-	gap: 8px;
-	color: #000;
-	text-decoration: none;
-	font-size: 14px;
-  }
-  
-  .edit-link__icon{
-	width: 16px;
-	height: 16px;
-  }
-  
-  body.is-auth .edit-link{
-	display: inline-flex;
-  }
-  

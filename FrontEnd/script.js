@@ -1,4 +1,5 @@
 let works = [];
+window.works = works;
 
 const gallery = document.querySelector(".gallery");
 const filters = document.querySelector(".filters");
@@ -7,6 +8,7 @@ function display(list) {
   gallery.innerHTML = "";
   list.forEach(work => {
     const figure = document.createElement("figure");
+    figure.dataset.id = work.id;
     figure.innerHTML = `
       <img src="${work.imageUrl}" alt="${work.title}">
       <figcaption>${work.title}</figcaption>
@@ -38,9 +40,14 @@ fetch("http://localhost:5678/api/works")
   .then(r => r.json())
   .then(data => {
     works = data;
+    window.works = works;
+
+    window.dispatchEvent(new CustomEvent("worksLoaded", { detail: works }));
+
     console.log("Works chargés :", works.length, "Exemple:", works[0]);
     display(works);
-  });
+  })
+.catch(err => console.error("Erreur fetch works :", err));
 
 filters.innerHTML = "";
 
@@ -76,3 +83,15 @@ fetch("http://localhost:5678/api/categories")
     });
   })
   .catch(err => console.error("Erreur fetch catégories :", err));
+
+window.addEventListener("worksUpdated", (e) => {
+    works = e.detail;
+    window.works = works;
+  
+    // Si un filtre est actif, on le garde
+    const activeBtn = document.querySelector(".filters button.active");
+    const activeId = activeBtn?.dataset?.id || "all";
+  
+    if (activeId === "all") display(works);
+    else render(Number(activeId));
+  });
